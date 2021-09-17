@@ -28,13 +28,7 @@ function App() {
 						Front-end developer
 					</h3>
 				</hgroup>
-				<!--
-        <img
-          className="sample__card--img js__profile-image"
-          src="./assets/images/picrandom.jpg"
-          alt="Imagen elegida por el usuario"
-        />
-      -->
+	
 				<div className="sample__card--img js__profile-image"
 					style="background-image: url('./assets/images/picrandom.jpg')"></div>
 				<ul className="sample__card--contact">
@@ -151,10 +145,7 @@ function App() {
 									<input type="file" name="photo" id="photo" className="action__hiddenField js__profile-upload-btn"
 										required />
 								</div>
-								<!--<div className="profile">
-                  <div className="profile__preview"></div>
-                </div>
-              -->
+					
 								<div className="quest__button--window js__profile-preview"></div>
 							</fieldset>
 
