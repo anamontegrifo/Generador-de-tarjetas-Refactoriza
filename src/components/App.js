@@ -248,15 +248,13 @@ function App() {
 					</section>
 
 					{/* Sección Rellena */}
-					<section className="section_fill">
+					<section className="sectionDesigns">
 						<article className="collapsible-title">
 							{/* Header - Rellena */}
-							<div
-								className="boxt a js-headerClick"
-								onClick={handleCollapsable}
-							>
-								<i className="far fa-keyboard keyfill"></i>
-								<h2 className="boxt__title">Rellena</h2>
+							<div className="a js-headerClick" onClick={handleCollapsable}>
+								<p>
+									<i className="far fa-keyboard keyfill "></i>Rellena
+								</p>
 								<div className={rotate}>
 									<img className="arrow" src={arrow} alt="" />
 								</div>
