@@ -22,10 +22,12 @@ function App() {
 
 			<main className="page">
 				<section className="sample">
+					{/* Botón Reset */}
 					<button className="sample__reset js-resetButton" type="reset">
 						<i className="far fa-trash-alt"></i>
 						Reset
 					</button>
+					{/* Tarjeta previsualización */}
 					<article className="sample__card js_card_result">
 						<hgroup className="sample___card--title">
 							<h2 className="sample__card--title--name js-nameCard js-colorTitle">
@@ -35,11 +37,14 @@ function App() {
 								Front-end developer
 							</h3>
 						</hgroup>
+						{/* Previsualización imagen */}
 						<div
 							className="sample__card--img js__profile-image"
 							style={{ backgroundImage: `url(${picRandom})` }}
 						></div>
+						{/* Listado iconos redes */}
 						<ul className="sample__card--contact">
+							{/* Icono phone */}
 							<li className="item item1">
 								<a
 									href="/phone"
@@ -50,6 +55,7 @@ function App() {
 									<i className="fas fa-mobile-alt"></i>
 								</a>
 							</li>
+							{/* Icono mail */}
 							<li className="item item2">
 								<a
 									href="/mail"
@@ -59,7 +65,7 @@ function App() {
 									<i className="far fa-envelope"></i>
 								</a>
 							</li>
-
+							{/* Icono linkedin */}
 							<li className="item item3">
 								<a
 									href="/linkedin"
@@ -69,7 +75,7 @@ function App() {
 									<i className="fab fa-linkedin-in"></i>
 								</a>
 							</li>
-
+							{/* Icono github */}
 							<li className="item item4">
 								<a
 									href="/github"
@@ -82,10 +88,14 @@ function App() {
 						</ul>
 					</article>
 				</section>
+				{/* - - - - - - - - - - - - - - - - - - - - - - */}
 
+				{/* Formulario*/}
 				<form className="formMarginGeneral js-textForm js-form" id="myForm">
+					{/* Sección diseña */}
 					<section className="sectionDesigns">
 						<article className="collapsible-title ">
+							{/* Header - diseña */}
 							<div className="a js-headerClick">
 								<p>
 									<i className="far fa-object-ungroup"></i>Diseña
@@ -94,11 +104,14 @@ function App() {
 									<img className="arrow" src={arrow2} alt="" />
 								</a>
 							</div>
+							{/* Cuerpo - diseña */}
 							<div className="js-collapse">
 								<div className="color">
 									<p className="text">colores</p>
+									{/* Todas las paletas */}
 									<div className="palette">
 										<fieldset className="check" action="/signup">
+											{/* Paleta */}
 											<label
 												className="check_one js-paletteOne js_palette"
 												htmlFor="palette"
@@ -116,6 +129,7 @@ function App() {
 													<div className="palette_3"></div>
 												</div>
 											</label>
+											{/* Paleta */}
 											<label
 												className="check_one js-paletteTwo js_palette"
 												htmlFor="palette"
@@ -133,6 +147,7 @@ function App() {
 													<div className="palette_3"></div>
 												</div>
 											</label>
+											{/* Paleta */}
 											<label
 												className="check_one js-paletteThree js_palette"
 												htmlFor="palette"
@@ -150,6 +165,7 @@ function App() {
 													<div className="palette_3"></div>
 												</div>
 											</label>
+											{/* Paleta */}
 											<label
 												className="check_one js-paletteFour js_palette"
 												htmlFor="palette"
@@ -167,6 +183,7 @@ function App() {
 													<div className="palette_3"></div>
 												</div>
 											</label>
+											{/* Paleta */}
 											<label
 												className="check_one js-paletteFive js_palette"
 												htmlFor="palette"
@@ -184,6 +201,7 @@ function App() {
 													<div className="palette_3"></div>
 												</div>
 											</label>
+											{/* Paleta */}
 											<label
 												className="check_one js-paletteSix js_palette"
 												htmlFor="palette"
@@ -206,10 +224,14 @@ function App() {
 								</div>
 							</div>
 						</article>
+						{/* Línea divisoria */}
 						<div className="line1"></div>
 					</section>
+
+					{/* Sección Rellena */}
 					<section className="section_fill">
 						<article className="collapsible-title">
+							{/* Header - Rellena */}
 							<div className="boxt a js-headerClick">
 								<i className="far fa-keyboard keyfill"></i>
 								<h2 className="boxt__title">Rellena</h2>
@@ -217,12 +239,14 @@ function App() {
 									<img className="arrow" src={arrow2} alt="" />
 								</a>
 							</div>
+							{/* Cuerpo - Rellena */}
 							<div className="js-collapse">
 								<fieldset
 									className="quest hidden js-textForm"
 									action="/signup"
 									method="post"
 								>
+									{/* Nombre */}
 									<label className="quest__label" htmlFor="name">
 										Nombre completo
 									</label>
@@ -234,6 +258,7 @@ function App() {
 										name="name"
 										required
 									/>
+									{/* Job */}
 									<label className="quest__label" htmlFor="job">
 										Puesto
 									</label>
@@ -245,7 +270,7 @@ function App() {
 										name="job"
 										required
 									/>
-
+									{/* Componente imagen */}
 									<fieldset className="quest__secondfield">
 										<label
 											htmlFor="photo"
@@ -266,6 +291,7 @@ function App() {
 										<div className="quest__button--window js__profile-preview"></div>
 									</fieldset>
 
+									{/* Email*/}
 									<label className="quest__label" htmlFor="email">
 										Email
 									</label>
@@ -277,6 +303,7 @@ function App() {
 										name="email"
 										required
 									/>
+									{/* Phone */}
 									<label className="quest__label" htmlFor="phone">
 										Teléfono
 									</label>
@@ -288,6 +315,7 @@ function App() {
 										name="phone"
 										required
 									/>
+									{/* linkedin */}
 									<label className="quest__label" htmlFor="linkedin">
 										Linkedin
 									</label>
@@ -299,6 +327,7 @@ function App() {
 										name="Linkedin-profile"
 										required
 									/>
+									{/* github */}
 									<label className="quest__label" htmlFor="github">
 										Github
 									</label>
@@ -313,10 +342,14 @@ function App() {
 								</fieldset>
 							</div>
 						</article>
+						{/* Línea divisoria */}
 						<div className="line1"></div>
 					</section>
+
+					{/* Sección Comparte */}
 					<section className="sectionDesigns">
 						<article className="collapsible-title ">
+							{/* Header - Comparte */}
 							<div className="a js-headerClick">
 								<p>
 									<i className="fas fa-share-alt"></i>Comparte
@@ -326,16 +359,19 @@ function App() {
 									<img className="arrow" src={arrow2} alt="" />
 								</a>
 							</div>
-
+							{/* Cuerpo - comparte*/}
 							<div className="js-collapse">
+								{/* Botón crear tarjeta*/}
 								<article className="button">
 									<button className="button1 js_create_btn">
 										<img className="target" src={target} alt="" />
 										<p>Crear tarjeta</p>
 									</button>
 								</article>
+								{/* Línea divisoria*/}
 								<div className="line3"></div>
-								<article className="share js-shareTwitter hiddenTwitter">
+								{/* Sección tarjeta ya creada*/}
+								<article className="share js-shareTwitter ">
 									<h1 className="title js-title">La tarjeta ha sido creada:</h1>
 									<a
 										href="/twitter"
@@ -343,7 +379,7 @@ function App() {
 										target="_blank"
 										rel="noreferrer"
 									>
-										T
+										¡Pulsa aquí!
 									</a>
 									<button className="button js-buttonTwitterOne">
 										<a
@@ -362,6 +398,7 @@ function App() {
 								</article>
 							</div>
 						</article>
+						{/* Línea divisoria*/}
 						<div className="line3 line4 js-line"></div>
 					</section>
 				</form>
