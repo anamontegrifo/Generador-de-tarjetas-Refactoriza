@@ -1,0 +1,139 @@
+.landing {
+  &__hero {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $white-four;
+    align-items: center;
+    grid-column: span 3;
+
+    @media (min-width: 768px) {
+      height: 90vh;
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    width: 250px;
+    margin: 70px 0px 0px;
+    @media (min-width: 768px) {
+      width: 420px;
+    }
+  }
+  &__title {
+    font-size: 19.2px;
+    font-family: 'Merriweather', serif;
+    color: $dull-orange;
+    text-align: center;
+    margin: 17.2px auto 0px auto;
+    @media (min-width: 768px) {
+      font-size: 24px;
+    }
+  }
+  &__paragraf {
+    height: 39px;
+    width: 265px;
+    text-align: center;
+    font-size: 12.8px;
+    color: $dark-green-blue;
+    @media (min-width: 768px) {
+      font-size: 16px;
+      height: 48px;
+      width: 331px;
+    }
+  }
+  &__button {
+    height: 42px;
+    width: 129px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    transition: all 0.4s ease-in-out;
+    background-image: linear-gradient(
+      to right,
+      #ee6bc9,
+      #30aef1,
+      #fddc39,
+      $dull-orange
+    );
+    box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
+
+    &:hover {
+      background-position: 100% 0;
+      transition: all 0.4s ease-in-out;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  /* button {
+    background-color: $dirty-blue;
+    height: 42px;
+    width: 129px;
+    border-radius: 21px;
+    border: none;
+    margin: 38px auto 30px auto;
+    &:hover {
+      color: #fff;
+      background-color: #82b5bd;
+      transition: all 0.4s ease-in-out;
+      transform: scale(1.1);
+    }
+  } */
+  &__wrapper--icons {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 4px;
+    width: 268px;
+    height: 74px;
+    border: solid rgba(225, 115, 52, 0.2) 2px;
+    margin-top: 18px;
+    .far {
+      font-size: 22.4px;
+      color: $dull-orange;
+      @media (min-width: 768px) {
+        font-size: 28px;
+      }
+    }
+    .fas {
+      font-size: 22.4px;
+      color: $dull-orange;
+      @media (min-width: 768px) {
+        font-size: 28px;
+      }
+    }
+    @media (min-width: 768px) {
+      font-size: 16px;
+      height: 86px;
+      width: 325px;
+    }
+  }
+}
+.text__icon {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: $gunmetal;
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+.link1 {
+  text-decoration: none;
+  color: $white-two;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 12px;
+}
