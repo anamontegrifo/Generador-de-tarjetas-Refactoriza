@@ -1,23 +1,22 @@
 import '../styles/App.scss';
 import { useState } from 'react';
 import picRandom from '../images/picrandom.jpg';
-import arrow1 from '../images/arrow.png';
-import arrow2 from '../images/arrowx2.png';
+import arrow from '../images/arrow.png';
 import lateral from '../images/Lateral.png';
 import target from '../images/target.png';
 
 function App() {
 	const [mode, setMode] = useState('');
-	const [arrow, setArrow] = useState(arrow2);
+	const [rotate, setRotate] = useState('up');
 
 	const handleCollapsable = (event) => {
 		console.log(event.currentTarget.id);
 		if (mode === 'hidden') {
 			setMode('');
-			setArrow(arrow2);
+			setRotate('down');
 		} else {
 			setMode('hidden');
-			setArrow(arrow1);
+			setRotate('up');
 		}
 	};
 
@@ -120,8 +119,8 @@ function App() {
 								<p>
 									<i className="far fa-object-ungroup"></i>Diseña
 								</p>
-								<div className="aArrow js-arrow">
-									<img className="aArrow arrow" src={arrow} alt="" />
+								<div className={rotate}>
+									<img className="arrow" src={arrow} alt="" />
 								</div>
 							</div>
 							{/* Cuerpo - diseña */}
@@ -258,7 +257,7 @@ function App() {
 							>
 								<i className="far fa-keyboard keyfill"></i>
 								<h2 className="boxt__title">Rellena</h2>
-								<div className="aArrow js-arrow">
+								<div className={rotate}>
 									<img className="arrow" src={arrow} alt="" />
 								</div>
 							</div>
@@ -377,10 +376,9 @@ function App() {
 								<p>
 									<i className="fas fa-share-alt"></i>Comparte
 								</p>
-								<a href="/arrow" className="aArrow js-arrow">
-									{' '}
+								<div className={rotate}>
 									<img className="arrow" src={arrow} alt="" />
-								</a>
+								</div>
 							</div>
 							{/* Cuerpo - comparte*/}
 							<div className={mode}>

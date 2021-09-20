@@ -21,6 +21,13 @@
 .collapsable-close {
   display: none;
 }
-.rotate {
+
+.up {
+	margin-left: auto;
+	
+}
+
+.down {
+	margin-left: auto;
   transform: rotate(180deg) translateY(21px);
 }

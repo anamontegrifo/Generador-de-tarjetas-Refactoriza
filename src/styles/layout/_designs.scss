@@ -13,15 +13,14 @@
       position: relative;
       top: 2px;
     }
-    .aArrow {
-      margin-left: auto;
-      .arrow {
-        height: 22px;
-        position: relative;
-        bottom: 8px;
-        padding: 10px;
-      }
-    }
+   
+
+		.arrow {
+			height: 22px;
+			position: relative;
+			bottom: 8px;
+			padding: 10px;
+		}
     .color {
       display: flex;
       justify-content: space-between;
