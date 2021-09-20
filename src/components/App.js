@@ -1,10 +1,26 @@
 import '../styles/App.scss';
+import { useState } from 'react';
 import picRandom from '../images/picrandom.jpg';
+import arrow1 from '../images/arrow.png';
 import arrow2 from '../images/arrowx2.png';
 import lateral from '../images/Lateral.png';
 import target from '../images/target.png';
 
 function App() {
+	const [mode, setMode] = useState('');
+	const [arrow, setArrow] = useState(arrow2);
+
+	const handleCollapsable = (event) => {
+		console.log(event.currentTarget.id);
+		if (mode === 'hidden') {
+			setMode('');
+			setArrow(arrow2);
+		} else {
+			setMode('hidden');
+			setArrow(arrow1);
+		}
+	};
+
 	return (
 		<div>
 			<header>
@@ -96,16 +112,20 @@ function App() {
 					<section className="sectionDesigns">
 						<article className="collapsible-title ">
 							{/* Header - diseña */}
-							<div className="a js-headerClick">
+							<div
+								className="a js-headerClick"
+								id="design"
+								onClick={handleCollapsable}
+							>
 								<p>
 									<i className="far fa-object-ungroup"></i>Diseña
 								</p>
-								<a href="/arrow" className="aArrow js-arrow">
-									<img className="arrow" src={arrow2} alt="" />
-								</a>
+								<div className="aArrow js-arrow">
+									<img className="aArrow arrow" src={arrow} alt="" />
+								</div>
 							</div>
 							{/* Cuerpo - diseña */}
-							<div className="js-collapse">
+							<div className={mode}>
 								<div className="color">
 									<p className="text">colores</p>
 									{/* Todas las paletas */}
@@ -232,15 +252,18 @@ function App() {
 					<section className="section_fill">
 						<article className="collapsible-title">
 							{/* Header - Rellena */}
-							<div className="boxt a js-headerClick">
+							<div
+								className="boxt a js-headerClick"
+								onClick={handleCollapsable}
+							>
 								<i className="far fa-keyboard keyfill"></i>
 								<h2 className="boxt__title">Rellena</h2>
-								<a href="/arrow" className="aArrow js-arrow">
-									<img className="arrow" src={arrow2} alt="" />
-								</a>
+								<div className="aArrow js-arrow">
+									<img className="arrow" src={arrow} alt="" />
+								</div>
 							</div>
 							{/* Cuerpo - Rellena */}
-							<div className="js-collapse">
+							<div className={mode}>
 								<fieldset
 									className="quest hidden js-textForm"
 									action="/signup"
@@ -350,17 +373,17 @@ function App() {
 					<section className="sectionDesigns">
 						<article className="collapsible-title ">
 							{/* Header - Comparte */}
-							<div className="a js-headerClick">
+							<div className="a js-headerClick" onClick={handleCollapsable}>
 								<p>
 									<i className="fas fa-share-alt"></i>Comparte
 								</p>
 								<a href="/arrow" className="aArrow js-arrow">
 									{' '}
-									<img className="arrow" src={arrow2} alt="" />
+									<img className="arrow" src={arrow} alt="" />
 								</a>
 							</div>
 							{/* Cuerpo - comparte*/}
-							<div className="js-collapse">
+							<div className={mode}>
 								{/* Botón crear tarjeta*/}
 								<article className="button">
 									<button className="button1 js_create_btn">
