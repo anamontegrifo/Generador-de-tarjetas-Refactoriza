@@ -8,6 +8,57 @@ import target from '../images/target.png';
 function App() {
 	const [mode, setMode] = useState('');
 	const [rotate, setRotate] = useState('up');
+	const [data, setData] = useState({
+		palette: 1,
+		name: '',
+		job: '',
+		phone: '',
+		email: '',
+		linkedin: '',
+		github: '',
+	});
+
+	const handleInput = (event) => {
+		const wichInput = event.currentTarget.name;
+
+		if (wichInput === 'name') {
+			setData({
+				...data,
+				name: event.currentTarget.value,
+			});
+			data.name = event.currentTarget.value;
+		} else if (wichInput === 'job') {
+			setData({
+				...data,
+				job: event.currentTarget.value,
+			});
+			data.job = event.currentTarget.value;
+		} else if (wichInput === 'phone') {
+			setData({
+				...data,
+				phone: event.currentTarget.value,
+			});
+			data.phone = event.currentTarget.value;
+		} else if (wichInput === 'email') {
+			setData({
+				...data,
+				email: event.currentTarget.value,
+			});
+			data.email = event.currentTarget.value;
+		} else if (wichInput === 'linkedin') {
+			setData({
+				...data,
+				linkedin: event.currentTarget.value,
+			});
+			data.linkedin = event.currentTarget.value;
+		} else if (wichInput === 'github') {
+			setData({
+				...data,
+				github: event.currentTarget.value,
+			});
+			data.github = event.currentTarget.value;
+		}
+	};
 
 	const handleCollapsable = (event) => {
 		console.log(event.currentTarget.id);
@@ -46,10 +97,10 @@ function App() {
 					<article className="sample__card js_card_result">
 						<hgroup className="sample___card--title">
 							<h2 className="sample__card--title--name js-nameCard js-colorTitle">
-								Nombre Apellido
+								{data.name === '' ? 'Nombre Apellidos' : data.name}
 							</h2>
 							<h3 className="sample__card--title--job js-jobCard js-colorSubtitle">
-								Front-end developer
+								{data.job === '' ? 'Front-end developer' : data.job}
 							</h3>
 						</hgroup>
 						{/* Previsualización imagen */}
@@ -62,10 +113,11 @@ function App() {
 							{/* Icono phone */}
 							<li className="item item1">
 								<a
-									href="/phone"
+									href={`tel: ${data.phone}`}
 									target="_blank"
 									title="Llamar"
 									className="itemLink js-colorIcon js-phoneCard"
+									rel="noreferrer"
 								>
 									<i className="fas fa-mobile-alt"></i>
 								</a>
@@ -73,9 +125,10 @@ function App() {
 							{/* Icono mail */}
 							<li className="item item2">
 								<a
-									href="/mail"
+									href={`mailto: ${data.email}`}
 									target="_blank"
 									className="itemLink js-colorIcon js-emailCard"
+									rel="noreferrer"
 								>
 									<i className="far fa-envelope"></i>
 								</a>
@@ -83,9 +136,10 @@ function App() {
 							{/* Icono linkedin */}
 							<li className="item item3">
 								<a
-									href="/linkedin"
+									href={`https://www.linkedin.com/in/${data.linkedin}`}
 									target="_blank"
 									className="itemLink js-colorIcon js-linkedin"
+									rel="noreferrer"
 								>
 									<i className="fab fa-linkedin-in"></i>
 								</a>
@@ -93,9 +147,10 @@ function App() {
 							{/* Icono github */}
 							<li className="item item4">
 								<a
-									href="/github"
+									href={data.github}
 									target="_blank"
 									className="itemLink js-colorIcon js-githubcard"
+									rel="noreferrer"
 								>
 									<i className="fab fa-github-alt"></i>
 								</a>
@@ -271,6 +326,8 @@ function App() {
 										Nombre completo
 									</label>
 									<input
+										onChange={handleInput}
+										value={data.name}
 										className="quest__input js-name js_input_name"
 										placeholder="Ej: Sali Jill"
 										id="name"
@@ -283,6 +340,8 @@ function App() {
 										Puesto
 									</label>
 									<input
+										onChange={handleInput}
+										value={data.job}
 										className="quest__input js_input_job"
 										placeholder="Ej: Front-end unicorn"
 										id="job"
@@ -316,10 +375,12 @@ function App() {
 										Email
 									</label>
 									<input
+										onChange={handleInput}
+										value={data.email}
 										className="quest__input js_input_email"
 										placeholder="Ej: sally-hill@gmail.com"
 										id="email"
-										type="text"
+										type="email"
 										name="email"
 										required
 									/>
@@ -328,6 +389,8 @@ function App() {
 										Teléfono
 									</label>
 									<input
+										onChange={handleInput}
+										value={data.phone}
 										className="quest__input js_input_phone"
 										placeholder="Ej:555-55-55-55"
 										id="phone"
@@ -340,6 +403,8 @@ function App() {
 										Linkedin
 									</label>
 									<input
+										onChange={handleInput}
+										value={data.linkedin}
 										className="quest__input js_input_linkedin"
 										placeholder="Ej: sally-hill"
 										id="linkedin"
@@ -352,6 +417,8 @@ function App() {
 										Github
 									</label>
 									<input
+										onChange={handleInput}
+										value={data.github}
 										className="quest__input js_input_github"
 										placeholder="@sally-hill"
 										id="github"
