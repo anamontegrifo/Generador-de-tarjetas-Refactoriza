@@ -103,7 +103,7 @@ function App() {
     setPallete(ev.target.value);
     // console.log(ev.curentTarget.checked);
   };
-  const truePallete1 = pallete === '1' ? `pallete1` : '';
+  // const truePallete1 = pallete === '1' ? `pallete1` : '';
 
   return (
     <div>
