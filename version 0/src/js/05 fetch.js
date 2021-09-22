@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 const createBtn = document.querySelector('.js_create_btn');
 const textURL = document.querySelector('.js-url');
