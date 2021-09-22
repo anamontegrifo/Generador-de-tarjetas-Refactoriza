@@ -6,8 +6,12 @@ import lateral from '../images/Lateral.png';
 import target from '../images/target.png';
 
 function App() {
-	const [mode, setMode] = useState('');
-	const [rotate, setRotate] = useState('up');
+	const [mode1, setMode1] = useState('');
+	const [mode2, setMode2] = useState('hidden');
+	const [mode3, setMode3] = useState('hidden');
+	const [rotate1, setRotate1] = useState('down');
+	const [rotate2, setRotate2] = useState('up');
+	const [rotate3, setRotate3] = useState('up');
 	const [data, setData] = useState({
 		palette: 1,
 		name: '',
@@ -60,14 +64,36 @@ function App() {
 		}
 	};
 
-	const handleCollapsable = (event) => {
+	const handleCollapsable1 = (event) => {
 		console.log(event.currentTarget.id);
-		if (mode === 'hidden') {
-			setMode('');
-			setRotate('down');
+		if (mode1 === 'hidden') {
+			setMode1('');
+			setRotate1('down');
 		} else {
-			setMode('hidden');
-			setRotate('up');
+			setMode1('hidden');
+			setRotate1('up');
+		}
+	};
+
+	const handleCollapsable2 = (event) => {
+		console.log(event.currentTarget.id);
+		if (mode2 === 'hidden') {
+			setMode2('');
+			setRotate2('down');
+		} else {
+			setMode2('hidden');
+			setRotate2('up');
+		}
+	};
+
+	const handleCollapsable3 = (event) => {
+		console.log(event.currentTarget.id);
+		if (mode3 === 'hidden') {
+			setMode3('');
+			setRotate3('down');
+		} else {
+			setMode3('hidden');
+			setRotate3('up');
 		}
 	};
 
@@ -147,7 +173,7 @@ function App() {
 							{/* Icono github */}
 							<li className="item item4">
 								<a
-									href={data.github}
+									href={`https://www.github.com/${data.github}`}
 									target="_blank"
 									className="itemLink js-colorIcon js-githubcard"
 									rel="noreferrer"
@@ -169,17 +195,17 @@ function App() {
 							<div
 								className="a js-headerClick"
 								id="design"
-								onClick={handleCollapsable}
+								onClick={handleCollapsable1}
 							>
 								<p>
 									<i className="far fa-object-ungroup"></i>Diseña
 								</p>
-								<div className={rotate}>
+								<div className={rotate1}>
 									<img className="arrow" src={arrow} alt="" />
 								</div>
 							</div>
 							{/* Cuerpo - diseña */}
-							<div className={mode}>
+							<div className={mode1}>
 								<div className="color">
 									<p className="text">colores</p>
 									{/* Todas las paletas */}
@@ -306,16 +332,16 @@ function App() {
 					<section className="sectionDesigns">
 						<article className="collapsible-title">
 							{/* Header - Rellena */}
-							<div className="a js-headerClick" onClick={handleCollapsable}>
+							<div className="a js-headerClick" onClick={handleCollapsable2}>
 								<p>
 									<i className="far fa-keyboard keyfill "></i>Rellena
 								</p>
-								<div className={rotate}>
+								<div className={rotate2}>
 									<img className="arrow" src={arrow} alt="" />
 								</div>
 							</div>
 							{/* Cuerpo - Rellena */}
-							<div className={mode}>
+							<div className={mode2}>
 								<fieldset
 									className="quest hidden js-textForm"
 									action="/signup"
@@ -409,7 +435,7 @@ function App() {
 										placeholder="Ej: sally-hill"
 										id="linkedin"
 										type="text"
-										name="Linkedin-profile"
+										name="linkedin"
 										required
 									/>
 									{/* github */}
@@ -423,7 +449,7 @@ function App() {
 										placeholder="@sally-hill"
 										id="github"
 										type="text"
-										name="Github-profile"
+										name="github"
 										required
 									/>
 								</fieldset>
@@ -437,16 +463,16 @@ function App() {
 					<section className="sectionDesigns">
 						<article className="collapsible-title ">
 							{/* Header - Comparte */}
-							<div className="a js-headerClick" onClick={handleCollapsable}>
+							<div className="a js-headerClick" onClick={handleCollapsable3}>
 								<p>
 									<i className="fas fa-share-alt"></i>Comparte
 								</p>
-								<div className={rotate}>
+								<div className={rotate3}>
 									<img className="arrow" src={arrow} alt="" />
 								</div>
 							</div>
 							{/* Cuerpo - comparte*/}
-							<div className={mode}>
+							<div className={mode3}>
 								{/* Botón crear tarjeta*/}
 								<article className="button">
 									<button className="button1 js_create_btn">
