@@ -12,8 +12,9 @@ function App() {
   const [rotate1, setRotate1] = useState('down');
   const [rotate2, setRotate2] = useState('up');
   const [rotate3, setRotate3] = useState('up');
+  const [pallete, setPallete] = useState('');
   const [data, setData] = useState({
-    palette: 1,
+    palette: '',
     name: '',
     job: '',
     phone: '',
@@ -96,6 +97,13 @@ function App() {
       setRotate3('up');
     }
   };
+  const handlePallete = (ev) => {
+    console.log(ev.target.value);
+    console.log(ev.target.checked);
+    setPallete(ev.target.value);
+    // console.log(ev.curentTarget.checked);
+  };
+  const truePallete1 = pallete === '1' ? `pallete1` : '';
 
   return (
     <div>
@@ -217,11 +225,13 @@ function App() {
                         htmlFor='palette'
                       >
                         <input
+                          onChange={handlePallete}
                           className='one'
                           id='palette'
                           type='radio'
                           value='1'
                           name='palette'
+                          checked={pallete === '1'}
                         />
                         <div className='paletteA'>
                           <div className='palette_1'></div>
@@ -235,11 +245,13 @@ function App() {
                         htmlFor='palette'
                       >
                         <input
+                          onChange={handlePallete}
                           className='one'
                           id='palette'
                           type='radio'
                           value='2'
                           name='palette'
+                          checked={pallete === '2'}
                         />
                         <div className='paletteB'>
                           <div className='palette_1'></div>
@@ -253,11 +265,13 @@ function App() {
                         htmlFor='palette'
                       >
                         <input
+                          onChange={handlePallete}
                           className='one'
                           id='palette'
                           type='radio'
                           value='3'
                           name='palette'
+                          checked={pallete === '3'}
                         />
                         <div className='paletteC'>
                           <div className='palette_1'></div>
@@ -271,11 +285,13 @@ function App() {
                         htmlFor='palette'
                       >
                         <input
+                          onChange={handlePallete}
                           className='one'
                           id='palette'
                           type='radio'
                           value='4'
                           name='palette'
+                          checked={pallete === '4'}
                         />
                         <div className='paletteD'>
                           <div className='palette_1'></div>
@@ -289,11 +305,13 @@ function App() {
                         htmlFor='palette'
                       >
                         <input
+                          onChange={handlePallete}
                           className='one'
                           id='palette'
                           type='radio'
                           value='5'
                           name='palette'
+                          checked={pallete === '5'}
                         />
                         <div className='paletteE'>
                           <div className='palette_1'></div>
@@ -307,11 +325,13 @@ function App() {
                         htmlFor='palette'
                       >
                         <input
+                          onChange={handlePallete}
                           className='one'
                           id='palette'
                           type='radio'
                           value='6'
                           name='palette'
+                          checked={pallete === '6'}
                         />
                         <div className='paletteF'>
                           <div className='palette_1'></div>
