@@ -1,4 +1,6 @@
 .page {
+	min-height: 70vh;
+	overflow: hidden;
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
