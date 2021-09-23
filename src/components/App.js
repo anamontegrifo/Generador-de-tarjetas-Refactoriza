@@ -108,12 +108,9 @@ function App() {
 			<header>
 				<header id="header" className="header">
 					<nav className="header__menu">
-						<a
-							href="http://beta.adalab.es/project-promo-n-module-2-team-5/"
-							title="Menu"
-						>
+					
 							<img className="header__menu--img" src={lateral} alt="Menu" />
-						</a>
+					
 					</nav>
 				</header>
 			</header>
