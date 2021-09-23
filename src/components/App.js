@@ -12,7 +12,7 @@ function App() {
 	const [rotate1, setRotate1] = useState('down');
 	const [rotate2, setRotate2] = useState('up');
 	const [rotate3, setRotate3] = useState('up');
-	const [palette, setPalette] = useState('');
+	const [palette, setPalette] = useState('palette1');
 
 	const [data, setData] = useState({
 		palette: '',
@@ -122,7 +122,7 @@ function App() {
 				<section className="sample">
 					{/* Botón Reset */}
 					<button className="sample__reset js-resetButton" type="reset">
-						<i className="far fa-trash-alt"></i>
+						<i className="far fa-trash-alt icon"></i>
 						Reset
 					</button>
 					{/* Tarjeta previsualización */}
@@ -220,6 +220,7 @@ function App() {
 											{/* Paleta */}
 											<label className="check_one" htmlFor="palette1">
 												<input
+													defaultChecked={true}
 													onChange={handlePalette}
 													className="one"
 													id="palette1"
@@ -477,7 +478,7 @@ function App() {
 								{/* Línea divisoria*/}
 								<div className="line3"></div>
 								{/* Sección tarjeta ya creada*/}
-								<article className="share js-shareTwitter ">
+								<article className="share js-shareTwitter hiddenTwitter">
 									<h1 className="title js-title">La tarjeta ha sido creada:</h1>
 									<a
 										href="/twitter"
@@ -505,7 +506,7 @@ function App() {
 							</div>
 						</article>
 						{/* Línea divisoria*/}
-						<div className="line3 line4 js-line"></div>
+						<div className=" line4 js-line"></div>
 					</section>
 				</form>
 			</main>
