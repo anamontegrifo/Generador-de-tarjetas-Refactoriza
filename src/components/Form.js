@@ -170,7 +170,7 @@ const Form = (props) => {
             <div className={props.mode3}>
               {/* Botón crear tarjeta*/}
               <article className='button'>
-                <button className='button1 js_create_btn' onClick={}>
+                <button className='button1 js_create_btn'>
                   <img className='target' src={target} alt='' />
                   <p>Crear tarjeta</p>
                 </button>

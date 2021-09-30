@@ -1,7 +1,7 @@
-const postDataFetch = (dataState) => {
+const postDataFetch = (data) => {
   return fetch('https://awesome-profile-cards.herokuapp.com/card', {
     method: 'POST',
-    body: JSON.stringify(dataState),
+    body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
     },
@@ -9,7 +9,6 @@ const postDataFetch = (dataState) => {
     .then((response) => response.json())
     .then((data) => {
       return data;
-      console.log(data);
     });
 };
 

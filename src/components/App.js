@@ -16,7 +16,7 @@ function App() {
   const [rotate3, setRotate3] = useState('up');
   const [palette, setPalette] = useState('palette1');
   const [image, setImage] = useState(picRandom);
-  const [twitter, setTwitter] = useState('');
+  const [twitter, setTwitter] = useState({});
   const [data, setData] = useState({
     palette: '',
     name: '',
@@ -30,6 +30,7 @@ function App() {
   useEffect(() => {
     Api().then((response) => {
       setTwitter(response);
+      console.log(twitter);
     });
   }, []);
 
