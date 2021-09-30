@@ -33,7 +33,21 @@ function App() {
     });
   }, []);
 
-
+const handleReset = () => {
+ setData(
+   {
+     palette: "",
+     name: "",
+     job: "",
+     phone: "",
+     email: "",
+     linkedin: "",
+     github: "",
+   },
+ );
+  setImage(picRandom);
+  setPalette("palette1");
+}
   const handleImage = (imageData) => {
     setImage(imageData);
   };
@@ -126,6 +140,7 @@ function App() {
           palettePreview={palette}
           dataPreview={data}
           dataImage={image}
+          handleReset={handleReset}
         />
         {/* - - - - - - - - - - - - - - - - - - - - - - */}
 

@@ -6,7 +6,11 @@ const Preview = (props) => {
     <>
       <section className="sample">
         {/* Botón Reset */}
-        <button className="sample__reset js-resetButton" type="reset">
+        <button
+          className="sample__reset js-resetButton"
+          type="reset"
+          onClick={props.handleReset}
+        >
           <i className="far fa-trash-alt icon"></i>
           Reset
         </button>
