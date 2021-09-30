@@ -29,7 +29,7 @@ const Preview = (props) => {
           {/* Previsualización imagen */}
           <div
             className="sample__card--img js__profile-image"
-            style={{ backgroundImage: `url(${picRandom})` }}
+            style={{ backgroundImage: `url(${props.dataImage})` }}
           ></div>
           {/* Listado iconos redes */}
           <ul className="sample__card--contact  ">

@@ -5,6 +5,7 @@ import Preview from './Preview';
 import Form from './Form';
 import Footer from './Footer';
 import ImageReader from './ImageReader';
+import picRandom from "../images/picrandom.jpg";
 
 function App() {
 	const [mode1, setMode1] = useState('');
@@ -14,7 +15,7 @@ function App() {
 	const [rotate2, setRotate2] = useState('up');
 	const [rotate3, setRotate3] = useState('up');
 	const [palette, setPalette] = useState('palette1');
-	const [image, setImage] = useState('');
+	const [image, setImage] = useState(picRandom);
 
 	const [data, setData] = useState({
 		palette: '',
@@ -110,39 +111,43 @@ function App() {
 	};
 
 	return (
-		<div>
-			<Header />
+    <div>
+      <Header />
 
-			<main className="page">
-				<Preview palettePreview={palette} dataPreview={data} />
-				{/* - - - - - - - - - - - - - - - - - - - - - - */}
+      <main className="page">
+        <Preview
+          palettePreview={palette}
+          dataPreview={data}
+          dataImage={image}
+        />
+        {/* - - - - - - - - - - - - - - - - - - - - - - */}
 
-				{/*Aquí estaba el formulario*/}
-				<Form
-					handleImage={handleImage}
-					handleInput={handleInput}
-					handleCollapsable1={handleCollapsable1}
-					rotate1={rotate1}
-					rotate2={rotate2}
-					rotate3={rotate3}
-					mode1={mode1}
-					mode2={mode2}
-					mode3={mode3}
-					handlePalette={handlePalette}
-					handleCollapsable2={handleCollapsable2}
-					handleCollapsable3={handleCollapsable3}
-					dataName={data.name}
-					dataJob={data.job}
-					dataEmail={data.email}
-					dataPhone={data.phone}
-					dataLink={data.linkedin}
-					dataGit={data.github}
-				/>
-			</main>
+        {/*Aquí estaba el formulario*/}
+        <Form
+          handleImage={handleImage}
+          handleInput={handleInput}
+          handleCollapsable1={handleCollapsable1}
+          rotate1={rotate1}
+          rotate2={rotate2}
+          rotate3={rotate3}
+          mode1={mode1}
+          mode2={mode2}
+          mode3={mode3}
+          handlePalette={handlePalette}
+          handleCollapsable2={handleCollapsable2}
+          handleCollapsable3={handleCollapsable3}
+          dataName={data.name}
+          dataJob={data.job}
+          dataEmail={data.email}
+          dataPhone={data.phone}
+          dataLink={data.linkedin}
+          dataGit={data.github}
+        />
+      </main>
 
-			<Footer />
-		</div>
-	);
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

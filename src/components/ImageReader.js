@@ -18,8 +18,8 @@ El orden cronológico en el que se ejecuta este componente es:
 */
 
 const ImageReader = (props) => {
-	const [fileSize, setFileSize] = useState(0);
-	const [fileType, setFileType] = useState('desconocida');
+	//const [fileSize, setFileSize] = useState(0);
+	//const [fileType, setFileType] = useState('desconocida');
 
 	// Creamos una referencia al input file para poder leer su contenido más tarde
 	const fileElement = useRef();
@@ -41,8 +41,8 @@ const ImageReader = (props) => {
 			console.log(selectedFile);
 
 			// Guardamos el tamaño y el tipo de la imagen en el estado
-			setFileSize(selectedFile.size);
-			setFileType(selectedFile.type);
+			//setFileSize(selectedFile.size);
+			//setFileType(selectedFile.type);
 
 			// Le decimos al lector de ficheros que lea el fichero seleccionado por la usuaria
 			fileReader.readAsDataURL(selectedFile);
