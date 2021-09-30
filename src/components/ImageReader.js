@@ -61,26 +61,29 @@ const ImageReader = (props) => {
 	fileReader.addEventListener('load', getImage);
 
 	return (
-		<fieldset className="quest__secondfield">
-			<label htmlFor="photo" className="quest__button js__profile-trigger">
-				{' '}
-				Añadir imagen{' '}
-			</label>
-			{/* Usamos fileElement como referencia de este input */}
-			<div className="action">
-				<input
-					ref={fileElement}
-					type="file"
-					name="photo"
-					id="photo"
-					className="action__hiddenField js__profile-upload-btn"
-					required
-					onChange={handleFile}
-				/>
-			</div>
-			<div className="quest__button--window js__profile-preview"></div>
-		</fieldset>
-	);
+    <fieldset className="quest__secondfield">
+      <label htmlFor="photo" className="quest__button js__profile-trigger">
+        {" "}
+        Añadir imagen{" "}
+      </label>
+      {/* Usamos fileElement como referencia de este input */}
+      <div className="action">
+        <input
+          ref={fileElement}
+          type="file"
+          name="photo"
+          id="photo"
+          className="action__hiddenField js__profile-upload-btn"
+          required
+          onChange={handleFile}
+        />
+      </div>
+      <div
+        className="quest__button--window js__profile-preview"
+        style={{ backgroundImage: `url(${props.dataImage})` }}
+      ></div>
+    </fieldset>
+  );
 };
 
 export default ImageReader;

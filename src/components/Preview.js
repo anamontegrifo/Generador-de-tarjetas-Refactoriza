@@ -1,4 +1,4 @@
-import picRandom from "../images/picrandom.jpg";
+
 import Icons from "./Icons";
 
 const Preview = (props) => {

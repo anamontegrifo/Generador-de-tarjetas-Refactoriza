@@ -18,20 +18,20 @@ function App() {
   const [image, setImage] = useState(picRandom);
   const [twitter, setTwitter] = useState('');
   const [data, setData] = useState({
-    palette: '',
-    name: '',
-    job: '',
-    phone: '',
-    email: '',
-    linkedin: '',
-    github: '',
+    palette:  "" ,
+    name: "",
+    job: "",
+    phone: "",
+    email: "",
+    linkedin: "",
+    github: "",
   });
-
   useEffect(() => {
     Api().then((response) => {
       setTwitter(response);
     });
   }, []);
+
 
   const handleImage = (imageData) => {
     setImage(imageData);
@@ -120,7 +120,7 @@ function App() {
     <div>
       <Header />
 
-      <main className='page'>
+      <main className="page">
         <Preview
           palettePreview={palette}
           dataPreview={data}
@@ -148,6 +148,7 @@ function App() {
           dataPhone={data.phone}
           dataLink={data.linkedin}
           dataGit={data.github}
+          dataImage={image}
         />
       </main>
 
