@@ -6,7 +6,7 @@ import Preview from './Preview';
 import Form from './Form';
 import Footer from './Footer';
 import picRandom from '../images/picrandom.jpg';
-import Api from '../service/Api';
+
 import Landing from './Landing';
 
 function App() {
@@ -20,20 +20,16 @@ function App() {
   const [image, setImage] = useState(picRandom);
   const [twitter, setTwitter] = useState({});
   const [data, setData] = useState({
-    palette: { palette },
+    palette: '',
     name: '',
     job: '',
     phone: '',
     email: '',
     linkedin: '',
     github: '',
-    image: { image },
+    image: '',
   });
-  useEffect(() => {
-    Api().then((response) => {
-      setTwitter(response);
-    });
-  }, []);
+
   console.log(twitter);
   const handleReset = () => {
     setData({
@@ -51,12 +47,12 @@ function App() {
   };
   const handleImage = (imageData) => {
     setImage(imageData);
-    setTwitter({ ...twitter, photo: imageData });
+    setData({ ...data, image: imageData });
   };
 
   const handlePalette = (event) => {
     setPalette(event.target.id);
-    setTwitter({ ...twitter, palette: event.target.id });
+    setData({ ...data, palette: event.target.id });
   };
 
   const handleInput = (event) => {
@@ -179,6 +175,7 @@ function App() {
               dataLink={data.linkedin}
               dataGit={data.github}
               dataImage={image}
+              data={data}
             />
           </main>
           <Footer />
