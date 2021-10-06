@@ -21,9 +21,9 @@ const Landing = () => {
         </span>
       </div>
 
-      <StartButton className='link1' text='comenzar'>
-        <Link to='/' />
-      </StartButton>
+      <Link to='/cards'>
+        <StartButton className='link1' text='COMENZAR'></StartButton>
+      </Link>
     </section>
   );
 };

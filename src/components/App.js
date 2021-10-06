@@ -136,7 +136,7 @@ function App() {
         <Route exact path='/'>
           <Landing />
         </Route>
-        <Route path='/cards'>
+        <Route exact path='/cards'>
           <Header />
 
           <main className='page'>
@@ -171,7 +171,6 @@ function App() {
               dataImage={image}
             />
           </main>
-          <Landing />
           <Footer />
         </Route>
       </Switch>
