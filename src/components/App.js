@@ -20,21 +20,21 @@ function App() {
   const [image, setImage] = useState(picRandom);
   const [twitter, setTwitter] = useState({});
   const [data, setData] = useState({
-    palette: '',
+    palette: { palette },
     name: '',
     job: '',
     phone: '',
     email: '',
     linkedin: '',
     github: '',
+    image: { image },
   });
   useEffect(() => {
     Api().then((response) => {
       setTwitter(response);
-      console.log(twitter);
     });
   }, []);
-
+  console.log(twitter);
   const handleReset = () => {
     setData({
       palette: '',
@@ -44,16 +44,19 @@ function App() {
       email: '',
       linkedin: '',
       github: '',
+      image: '',
     });
     setImage(picRandom);
     setPalette('palette1');
   };
   const handleImage = (imageData) => {
     setImage(imageData);
+    setTwitter({ ...twitter, photo: imageData });
   };
 
   const handlePalette = (event) => {
     setPalette(event.target.id);
+    setTwitter({ ...twitter, palette: event.target.id });
   };
 
   const handleInput = (event) => {
@@ -65,36 +68,43 @@ function App() {
         name: event.currentTarget.value,
       });
       data.name = event.currentTarget.value;
+      setTwitter({ ...twitter, name: event.currentTarget.value });
     } else if (wichInput === 'job') {
       setData({
         ...data,
         job: event.currentTarget.value,
       });
       data.job = event.currentTarget.value;
+      setTwitter({ ...twitter, job: event.currentTarget.value });
     } else if (wichInput === 'phone') {
       setData({
         ...data,
         phone: event.currentTarget.value,
       });
       data.phone = event.currentTarget.value;
+      setTwitter({ ...twitter, phone: event.currentTarget.value });
     } else if (wichInput === 'email') {
       setData({
         ...data,
         email: event.currentTarget.value,
       });
       data.email = event.currentTarget.value;
+      setTwitter({ ...twitter, email: event.currentTarget.value });
     } else if (wichInput === 'linkedin') {
       setData({
         ...data,
         linkedin: event.currentTarget.value,
       });
       data.linkedin = event.currentTarget.value;
+      setTwitter({ ...twitter, linkedin: event.currentTarget.value });
     } else if (wichInput === 'github') {
       setData({
         ...data,
         github: event.currentTarget.value,
       });
       data.github = event.currentTarget.value;
+      setTwitter({ ...twitter, github: event.currentTarget.value });
+      twitter.github = event.currentTarget.value;
     }
   };
 
