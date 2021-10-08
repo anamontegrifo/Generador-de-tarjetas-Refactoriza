@@ -1,21 +1,25 @@
 const Share = (props) => {
+  const handleClick = () => {
+    fetch('https:awesome-profile-cards.herokuap.com/card', {
+      method: 'POST',
+      body: JSON.stringify(props.data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success === false) {
+          props.setError(data.error);
+          props.setSuccess('');
+        } else if (data.success === true) {
+          props.setSuccess(data.cardURL);
 
-    const handleClick = ( )=>{
+          props.setError('');
+        }
+      });
+  };
 
-        fetch('https:awesome-profile-cards.herokuap.com/card', {
-            method: 'POST',
-            body: JSON.stringify(props.data),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        .then((res) => res.json()) 
-        .then((data) => { if (data.success === false) { props.setError(data.error); 
-            props.setSuccess(""); } 
-            else if (data.success === true) 
-            { props.setSuccess(data.cardURL); 
-                props.setError(""); } }); }; 
-}
   return (
     <section className='sectionDesigns'>
       <article className='collapsible-title '>
@@ -43,12 +47,12 @@ const Share = (props) => {
           <article className='share js-shareTwitter'>
             <h1 className='title js-title'>La tarjeta ha sido creada:</h1>
             <a
-              href={props.urlShare}
+              href={props.success}
               className='url js-url'
               target='_blank'
               rel='noreferrer'
             >
-              {props.urlShare}
+              {props.success}
             </a>
             <button className='button js-buttonTwitterOne'>
               <a href='/twitter' target='_blank' className='js-buttonTwitter'>
@@ -68,5 +72,4 @@ const Share = (props) => {
     </section>
   );
 };
-
 export default Share;

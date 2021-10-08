@@ -144,6 +144,11 @@ const Form = (props) => {
           arrow={arrow}
           mode3={props.mode3}
           target={target}
+          data={props.data}
+          success={props.success}
+          setSuccess={props.setSuccess}
+          error={props.error}
+          setError={props.setError}
         />
       </form>
     </>
