@@ -9,6 +9,7 @@ const Share = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        debugger;
         if (data.success === false) {
           props.setError(data.error);
           props.setSuccess('');
@@ -44,27 +45,39 @@ const Share = (props) => {
           {/* Línea divisoria*/}
           <div className='line3'></div>
           {/* Sección tarjeta ya creada*/}
-          <article className='share js-shareTwitter'>
-            <h1 className='title js-title'>La tarjeta ha sido creada:</h1>
-            <a
-              href={props.success}
-              className='url js-url'
-              target='_blank'
-              rel='noreferrer'
-            >
-              {props.success}
-            </a>
-            <button className='button js-buttonTwitterOne'>
-              <a href='/twitter' target='_blank' className='js-buttonTwitter'>
-                <i className='fab fa-twitter'>
-                  <p className='twitter js-shareTwitter'>
-                    {' '}
-                    Compartir en twitter
-                  </p>
-                </i>
+          {props.success !== '' ? (
+            <article className='share js-shareTwitter'>
+              <h1 className='title js-title'>La tarjeta ha sido creada:</h1>
+              <a
+                href={props.success}
+                className='url js-url'
+                target='_blank'
+                rel='noreferrer'
+              >
+                {props.success}
               </a>
-            </button>
-          </article>
+              <button className='button js-buttonTwitterOne'>
+                <a href='/twitter' target='_blank' className='js-buttonTwitter'>
+                  <i className='fab fa-twitter'>
+                    <p className='twitter js-shareTwitter'>
+                      {' '}
+                      Compartir en twitter
+                    </p>
+                  </i>
+                </a>
+              </button>
+            </article>
+          ) : (
+            ''
+          )}
+          {props.error !== '' ? (
+            <article className='share js-shareTwitter'>
+              <h1 className='title js-title'>La tarjeta NO ha sido creada:</h1>
+              <p>{props.error}</p>
+            </article>
+          ) : (
+            ''
+          )}
         </div>
       </article>
       {/* Línea divisoria*/}

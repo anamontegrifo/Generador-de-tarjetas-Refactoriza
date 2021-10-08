@@ -18,36 +18,36 @@ function App() {
   const [rotate3, setRotate3] = useState('up');
   const [palette, setPalette] = useState('palette1');
   const [image, setImage] = useState(picRandom);
-  const [success, setSuccess] = useState('hidden');
+  const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
   const [data, setData] = useState({
-    palette: '',
+    palette: 1,
     name: '',
     job: '',
     phone: '',
     email: '',
     linkedin: '',
     github: '',
-    image: '',
+    photo: '',
   });
 
   const handleReset = () => {
     setData({
-      palette: '',
+      palette: 1,
       name: '',
       job: '',
       phone: '',
       email: '',
       linkedin: '',
       github: '',
-      image: '',
+      photo: '',
     });
     setImage(picRandom);
     setPalette('palette1');
   };
   const handleImage = (imageData) => {
     setImage(imageData);
-    setData({ ...data, image: imageData });
+    setData({ ...data, photo: imageData });
   };
 
   const handlePalette = (event) => {

@@ -4,13 +4,16 @@ import target from '../images/target.png';
 import Design from './Design';
 import ImageReader from './ImageReader';
 import Share from './Share';
-import Api from '../service/Api';
 
 const Form = (props) => {
   return (
     <>
       {/* Formulario*/}
-      <form className='formMarginGeneral js-textForm js-form' id='myForm'>
+      <form
+        className='formMarginGeneral js-textForm js-form'
+        id='myForm'
+        onSubmit={(ev) => ev.preventDefault()}
+      >
         {/* Sección diseña */}
         <Design
           handleCollapsable1={props.handleCollapsable1}
