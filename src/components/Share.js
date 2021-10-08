@@ -1,6 +1,6 @@
 const Share = (props) => {
   const handleClick = () => {
-    fetch('https:awesome-profile-cards.herokuap.com/card', {
+    fetch('https://awesome-profile-cards.herokuapp.com/card', {
       method: 'POST',
       body: JSON.stringify(props.data),
       headers: {
