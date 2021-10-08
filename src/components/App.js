@@ -21,7 +21,7 @@ function App() {
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
   const [data, setData] = useState({
-    palette: 1,
+    palette: 'palette1',
     name: '',
     job: '',
     phone: '',
@@ -33,7 +33,7 @@ function App() {
 
   const handleReset = () => {
     setData({
-      palette: 1,
+      palette: 'palette1',
       name: '',
       job: '',
       phone: '',

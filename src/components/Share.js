@@ -9,7 +9,6 @@ const Share = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        debugger;
         if (data.success === false) {
           props.setError(data.error);
           props.setSuccess('');
