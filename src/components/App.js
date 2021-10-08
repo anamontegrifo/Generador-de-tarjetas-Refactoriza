@@ -18,6 +18,9 @@ function App() {
   const [rotate3, setRotate3] = useState('up');
   const [palette, setPalette] = useState('palette1');
   const [image, setImage] = useState(picRandom);
+  const [urlShare, setUrlShare] = useState('');
+  const [successCard, setSuccessCard] = useState('hidden');
+  const [error, setError] = useState('');
   const [data, setData] = useState({
     palette: '',
     name: '',
