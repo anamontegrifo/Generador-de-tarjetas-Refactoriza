@@ -56,7 +56,12 @@ const Share = (props) => {
                 {props.success}
               </a>
               <button className='button js-buttonTwitterOne'>
-                <a href='/twitter' target='_blank' className='js-buttonTwitter'>
+                <a
+                  href={`https://twitter.com/intent/tweet?url=${props.success} `}
+                  target='_blank'
+                  className='js-buttonTwitter'
+                  rel='noreferrer'
+                >
                   <i className='fab fa-twitter'>
                     <p className='twitter js-shareTwitter'>
                       {' '}
