@@ -17,9 +17,13 @@ server.listen(serverPort, () => {
 	console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
+//configurar servidor de estáticos:
+const staticServerPath = './src/public-react';
+server.use(express.static(staticServerPath));
+
 // Escribimos los endpoints que queramos
 server.post('/card', (req, res) => {
-	console.log(req.body.name);
+	console.log(req.body);
 	const response = {};
 
 	if (req.body.name === '') {

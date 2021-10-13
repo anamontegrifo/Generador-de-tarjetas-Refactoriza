@@ -16,8 +16,8 @@ function App() {
 	const [rotate1, setRotate1] = useState('down');
 	const [rotate2, setRotate2] = useState('up');
 	const [rotate3, setRotate3] = useState('up');
-	const [palette, setPalette] = useState('palette1');
-	const [image, setImage] = useState(picRandom);
+	const [palette, setPalette] = useState(ls.get('palette', 'palette1'));
+	const [image, setImage] = useState(ls.get('image', picRandom));
 	const [success, setSuccess] = useState('');
 	const [error, setError] = useState('');
 	const [data, setData] = useState(
@@ -36,6 +36,14 @@ function App() {
 	useEffect(() => {
 		ls.set('data', data);
 	}, [data]);
+
+	useEffect(() => {
+		ls.set('palette', palette);
+	}, [palette]);
+
+	useEffect(() => {
+		ls.set('image', image);
+	}, [image]);
 
 	const handleReset = () => {
 		setData({
