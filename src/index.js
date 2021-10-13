@@ -12,49 +12,41 @@ server.use(cors());
 server.use(express.json());
 
 // Arrancamos el servidor en el puerto 3000
-const serverPort = 3000;
+const serverPort = 4000;
 server.listen(serverPort, () => {
 	console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
 // Escribimos los endpoints que queramos
-server.post('/cards', (req, res) => {
-	const data = {
-		palette: 'palette1',
-		name: 'Mary Carmen Smith',
-		job: 'Mother of dragons',
-		phone: '968594030',
-		email: 'nodeofdragons@gmail.com',
-		linkedin: 'nodeofdragons',
-		github: 'nodeofdragons',
-		photo: 'https://via.placeholder.com/150',
-	};
+server.post('/card', (req, res) => {
+	console.log(req.body.name);
+	const response = {};
 
-	let error = '';
-
-	if (data.name === '') {
-		error = 'missing name';
-	} else if (data.job === '') {
-		error = 'missing job';
-	} else if (data.phone === '') {
-		error = 'missing phone';
-	} else if (data.email === '') {
-		error = 'missing email';
-	} else if (data.linkedin === '') {
-		error = 'missing linkedin';
-	} else if (data.github === '') {
-		error = 'missing github';
-	} else if (data.photo === '') {
-		error = 'missing photo';
+	if (req.body.name === '') {
+		response.error = 'missing name';
+		response.success = false;
+	} else if (req.body.job === '') {
+		response.error = 'missing job';
+		response.success = false;
+	} else if (req.body.phone === '') {
+		response.error = 'missing phone';
+		response.success = false;
+	} else if (req.body.email === '') {
+		response.error = 'missing email';
+		response.success = false;
+	} else if (req.body.linkedin === '') {
+		response.error = 'missing linkedin';
+		response.success = false;
+	} else if (req.body.github === '') {
+		response.error = 'missing github';
+		response.success = false;
+	} else if (req.body.photo === '') {
+		response.error = 'missing photo';
+		response.success = false;
 	} else {
-		data.success === true;
-		cardURL = '';
+		response.cardURL = 'Este enlace funciona, comprobado por Mesalina y Ana';
+		response.success = true;
 	}
 
-	const response = {
-		error: error,
-		success: true,
-		cardURL: '',
-	};
 	res.json(response);
 });
