@@ -25,6 +25,8 @@ server.use(express.static(staticServerPath));
 server.post('/card', (req, res) => {
 	console.log(req.body);
 	const response = {};
+	const emailVal =
+		/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 	if (req.body.name === '') {
 		response.error = 'missing name';
@@ -35,7 +37,7 @@ server.post('/card', (req, res) => {
 	} else if (req.body.phone === '') {
 		response.error = 'missing phone';
 		response.success = false;
-	} else if (req.body.email === '') {
+	} else if (!emailVal.test(req.body.email)) {
 		response.error = 'missing email';
 		response.success = false;
 	} else if (req.body.linkedin === '') {
