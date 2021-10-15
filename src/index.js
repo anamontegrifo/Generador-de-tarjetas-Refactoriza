@@ -11,7 +11,7 @@ const server = express();
 // Configuramos el servidor
 server.use(cors());
 server.use(express.json());
-server.use('view engine', 'ejs');
+server.set('view engine', 'ejs');
 server.use(express.json({ limit: '10mb' }));
 
 // Arrancamos el servidor en el puerto 3000
@@ -24,12 +24,16 @@ server.listen(serverPort, () => {
 const staticServerPath = './src/public-react';
 server.use(express.static(staticServerPath));
 
+const staticStylesServer = './static/styles';
+server.use(express.static(staticStylesServer));
+
 const db = new Database('./src/db/database.db', { verbose: console.log });
 
 // Escribimos los endpoints que queramos
 server.get('/card/:id', (req, res) => {
 	const query = db.prepare(`SELECT * FROM card WHERE id = ?`);
 	const data = query.get(req.params.id);
+	console.log(data);
 	res.render('card', data);
 });
 
