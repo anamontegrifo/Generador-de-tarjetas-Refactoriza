@@ -1,6 +1,19 @@
 .title {
 	color: aquamarine;
 }
+.sample {
+	background: linear-gradient(#acebb1, #487c41);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0;
+	order: 2;
+	@media (min-width: 768px) {
+		margin-bottom: 20px;
+		border-radius: 6px;
+	}
+}
 
 .sample__card {
 	width: 240px;
@@ -19,8 +32,33 @@
 	color: #114e4e;
 	border-left: #438792 solid 5px;
 }
+.sample__card--title--job {
+	padding-left: 15px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	line-height: 20px;
+	border-left: #438792 solid 5px;
+}
+
 .sample__card--contact {
 	list-style: none;
 	display: flex;
 	padding: 10px 0 12px 20px;
+}
+.sample__card--img {
+	width: 240px;
+	height: 200px;
+	background-size: cover;
+}
+.itemLink {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	color: #114e4e;
+	height: 32px;
+	margin-right: 10px;
+	width: 32px;
+	border: solid #a2deaf 2px;
+	border-radius: 18px;
 }

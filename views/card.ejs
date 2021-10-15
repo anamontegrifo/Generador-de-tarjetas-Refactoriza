@@ -14,15 +14,6 @@
 
 <body>
 	<section class="sample">
-		<!-- {/* Botón Reset */} -->
-		<!-- <button
-			class="sample__reset js-resetButton"
-			type="reset"
-			onClick={props.handleReset}
-		>
-			<i class="far fa-trash-alt icon"></i>
-			Reset
-		</button> -->
 		<!-- {/* Tarjeta previsualización */} -->
 
 		<article class="sample__card <%= palette %> ">
@@ -36,7 +27,7 @@
 			</hgroup>
 			<!-- {/* Previsualización imagen */} -->
 
-			<!-- <div class="sample__card--img js__profile-image" style={{ backgroundImage: `url(${props.dataImage})` }}></div> -->
+			<div class="sample__card--img js__profile-image" style="background-image: url(<%= photo %>)"></div>
 
 			<!-- {/* Listado iconos redes */} -->
 			<ul class="sample__card--contact">
@@ -47,14 +38,26 @@
 					</a>
 				</li>
 
-				{/* Icono mail */}
-				<Icons hrefIcon={`mailto: ${props.dataPreview.email}`} titleIcon="Email" classIcon="far fa-envelope" />
-				{/* Icono linkedin */}
-				<Icons hrefIcon={`https://www.linkedin.com/in/${props.dataPreview.linkedin}`} titleIcon="Linkedin"
-					classIcon="fab fa-linkedin-in" />
-				{/* Icono github */}
-				<Icons hrefIcon={`https://www.github.com/${props.dataPreview.github}`} titleIcon="Github"
-					classIcon="fab fa-github-alt" />
+				<!-- {/* Icono mail */} -->
+				<li class="item item1">
+					<a href="mailto: <%= email %>" target="_blank" title="Email" class="itemLink previewIcons " rel="noreferrer">
+						<i class="fas fa-envelope"></i>
+					</a>
+				</li>
+
+				<!-- {/* Icono linkedin */} -->
+				<li class="item item1">
+					<a href="<%= linkedin %>" target="_blank" title="Linkedin" class="itemLink previewIcons " rel="noreferrer">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
+				</li>
+
+				<!-- {/* Icono github */} -->
+				<li class="item item1">
+					<a href="<%= github %>" target="_blank" title="Github" class="itemLink previewIcons " rel="noreferrer">
+						<i class="fab fa-github-alt"></i>
+					</a>
+				</li>
 			</ul>
 		</article>
 	</section>
