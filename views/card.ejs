@@ -5,12 +5,59 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="./cardServer.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css" href="../cardServer.css">
 	<title>Document</title>
+	<script src="https://kit.fontawesome.com/adcd08db79.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<h1 class="title">Hola <%= name %></h1>
+	<section class="sample">
+		<!-- {/* Botón Reset */} -->
+		<!-- <button
+			class="sample__reset js-resetButton"
+			type="reset"
+			onClick={props.handleReset}
+		>
+			<i class="far fa-trash-alt icon"></i>
+			Reset
+		</button> -->
+		<!-- {/* Tarjeta previsualización */} -->
+
+		<article class="sample__card <%= palette %> ">
+			<hgroup class=" sample___card--title">
+				<h2 class="sample__card--title--name previewName">
+					<%= name %>
+				</h2>
+				<h3 class="sample__card--title--job previewJob">
+					<%= job %>
+				</h3>
+			</hgroup>
+			<!-- {/* Previsualización imagen */} -->
+
+			<!-- <div class="sample__card--img js__profile-image" style={{ backgroundImage: `url(${props.dataImage})` }}></div> -->
+
+			<!-- {/* Listado iconos redes */} -->
+			<ul class="sample__card--contact">
+				<!-- {/* Icono phone */} -->
+				<li class="item item1">
+					<a href="<%= phone %>" target="_blank" title="Llamar" class="itemLink previewIcons " rel="noreferrer">
+						<i class="fas fa-mobile-alt"></i>
+					</a>
+				</li>
+
+				{/* Icono mail */}
+				<Icons hrefIcon={`mailto: ${props.dataPreview.email}`} titleIcon="Email" classIcon="far fa-envelope" />
+				{/* Icono linkedin */}
+				<Icons hrefIcon={`https://www.linkedin.com/in/${props.dataPreview.linkedin}`} titleIcon="Linkedin"
+					classIcon="fab fa-linkedin-in" />
+				{/* Icono github */}
+				<Icons hrefIcon={`https://www.github.com/${props.dataPreview.github}`} titleIcon="Github"
+					classIcon="fab fa-github-alt" />
+			</ul>
+		</article>
+	</section>
 </body>
 
 </html>
