@@ -1,66 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../cardServer.css" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/adcd08db79.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-	<link rel="stylesheet" type="text/css" href="../cardServer.css">
-	<title>Document</title>
-	<script src="https://kit.fontawesome.com/adcd08db79.js" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <section class="sample">
+      <!-- {/* Tarjeta previsualización */} -->
 
-<body>
-	<section class="sample">
-		<!-- {/* Tarjeta previsualización */} -->
+      <article class="sample__card <%= palette %>">
+        <hgroup class="sample___card--title">
+          <h2 class="sample__card--title--name previewName"><%= name %></h2>
+          <h3 class="sample__card--title--job previewJob"><%= job %></h3>
+        </hgroup>
+        <!-- {/* Previsualización imagen */} -->
 
-		<article class="sample__card <%= palette %>">
-			<hgroup class=" sample___card--title">
-				<h2 class="sample__card--title--name previewName">
-					<%= name %>
-				</h2>
-				<h3 class="sample__card--title--job previewJob">
-					<%= job %>
-				</h3>
-			</hgroup>
-			<!-- {/* Previsualización imagen */} -->
+        <div
+          class="sample__card--img js__profile-image"
+          style="background-image: url('<%= photo %>')"
+        ></div>
 
-			<div class="sample__card--img js__profile-image" style="background-image: url('<%= photo %>')"></div>
+        <!-- {/* Listado iconos redes */} -->
+        <ul class="sample__card--contact">
+          <!-- {/* Icono phone */} -->
+          <li class="item item1">
+            <a
+              href="tel: <%= phone %>"
+              target="_blank"
+              title="Llamar"
+              class="itemLink previewIcons"
+              rel="noreferrer"
+            >
+              <i class="fas fa-mobile-alt"></i>
+            </a>
+          </li>
 
-			<!-- {/* Listado iconos redes */} -->
-			<ul class="sample__card--contact">
-				<!-- {/* Icono phone */} -->
-				<li class="item item1">
-					<a href="<%= phone %>" target="_blank" title="Llamar" class="itemLink previewIcons " rel="noreferrer">
-						<i class="fas fa-mobile-alt"></i>
-					</a>
-				</li>
+          <!-- {/* Icono mail */} -->
+          <li class="item item1">
+            <a
+              href="mailto: <%= email %>"
+              target="_blank"
+              title="Email"
+              class="itemLink previewIcons"
+              rel="noreferrer"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
 
-				<!-- {/* Icono mail */} -->
-				<li class="item item1">
-					<a href="mailto: <%= email %>" target="_blank" title="Email" class="itemLink previewIcons " rel="noreferrer">
-						<i class="fas fa-envelope"></i>
-					</a>
-				</li>
+          <!-- {/* Icono linkedin */} -->
+          <li class="item item1">
+            <a
+              href="https://www.linkedin.com/in/<%= linkedin %>"
+              target="_blank"
+              title="Linkedin"
+              class="itemLink previewIcons"
+              rel="noreferrer"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
 
-				<!-- {/* Icono linkedin */} -->
-				<li class="item item1">
-					<a href='<%= linkedin %>' target="_blank" title="Linkedin" class="itemLink previewIcons " rel="noreferrer">
-						<i class="fab fa-linkedin-in"></i>
-					</a>
-				</li>
-
-				<!-- {/* Icono github */} -->
-				<li class="item item1">
-					<a href='<%= github %>' target="_blank" title="Github" class="itemLink previewIcons " rel="noreferrer">
-						<i class="fab fa-github-alt"></i>
-					</a>
-				</li>
-			</ul>
-		</article>
-	</section>
-</body>
-
+          <!-- {/* Icono github */} -->
+          <li class="item item1">
+            <a
+              href="https://www.github.com/<%= github %>"
+              target="_blank"
+              title="Github"
+              class="itemLink previewIcons"
+              rel="noreferrer"
+            >
+              <i class="fab fa-github-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </body>
 </html>
