@@ -1,64 +1,135 @@
 .title {
-	color: aquamarine;
+  color: aquamarine;
 }
 .sample {
-	background: linear-gradient(#acebb1, #487c41);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 20px 0;
-	order: 2;
-	@media (min-width: 768px) {
-		margin-bottom: 20px;
-		border-radius: 6px;
-	}
+  background: linear-gradient(#acebb1, #487c41);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  order: 2;
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+    border-radius: 6px;
+  }
 }
 
 .sample__card {
-	width: 240px;
-	background-color: #fff;
-	border-radius: 2px;
-	box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.35);
-	padding-top: 20px;
+  width: 240px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+  padding-top: 20px;
 }
 
 .sample__card--title--name {
-	padding-left: 15px;
-	padding-bottom: 4px;
-	font-size: 18px;
-	font-weight: 600;
-	line-height: 20px;
-	color: #114e4e;
-	border-left: #438792 solid 5px;
+  padding-left: 15px;
+  padding-bottom: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #114e4e;
+  border-left: #438792 solid 5px;
 }
 .sample__card--title--job {
-	padding-left: 15px;
-	margin-bottom: 10px;
-	font-size: 16px;
-	line-height: 20px;
-	border-left: #438792 solid 5px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 20px;
+  border-left: #438792 solid 5px;
 }
 
 .sample__card--contact {
-	list-style: none;
-	display: flex;
-	padding: 10px 0 12px 20px;
+  list-style: none;
+  display: flex;
+  padding: 10px 0 12px 20px;
 }
 .sample__card--img {
-	width: 240px;
-	height: 200px;
-	background-size: cover;
+  width: 240px;
+  height: 200px;
+  background-size: cover;
 }
 .itemLink {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 18px;
-	color: #114e4e;
-	height: 32px;
-	margin-right: 10px;
-	width: 32px;
-	border: solid #a2deaf 2px;
-	border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #114e4e;
+  height: 32px;
+  margin-right: 10px;
+  width: 32px;
+  border: solid #a2deaf 2px;
+  border-radius: 18px;
+}
+
+.palette1 .previewName {
+  color: #114e4e;
+  border-left: #438792 solid 5px;
+}
+.palette1 .previewJob {
+  border-left: #438792 solid 5px;
+}
+.palette1 .previewIcons {
+  color: #114e4e;
+  border: solid 2px #a2deaf;
+}
+
+.palette2 .previewName {
+  color: #420101;
+  border-left: #bd1010 solid 5px;
+}
+.palette2 .previewJob {
+  border-left: #bd1010 solid 5px;
+}
+.palette2 .previewIcons {
+  color: #420101;
+  border: solid 2px #e95626;
+}
+
+.palette3 .previewName {
+  color: #3e5b65;
+  border-left: #eab052 solid 5px;
+}
+.palette3 .previewJob {
+  border-left: #eab052 solid 5px;
+}
+.palette3 .previewIcons {
+  color: #3e5b65;
+  border: solid 2px #a0c0cf;
+}
+
+.palette4 .previewName {
+  color: #fa85e1;
+  border-left: #b1f6e3 solid 5px;
+}
+.palette4 .previewJob {
+  border-left: #b1f6e3 solid 5px;
+}
+.palette4 .previewIcons {
+  color: #fa85e1;
+  border: solid 2px #ecfd50;
+}
+
+.palette5 .previewName {
+  color: #2112f7;
+  border-left: #a61d39 solid 5px;
+}
+.palette5 .previewJob {
+  border-left: #a61d39 solid 5px;
+}
+.palette5 .previewIcons {
+  color: #2112f7;
+  border: solid 2px #20bebf;
+}
+.palette6 .previewName {
+  color: #7632f5;
+  border-left: #f6ff72 solid 5px;
+}
+.palette6 .previewJob {
+  border-left: #f6ff72 solid 5px;
+}
+.palette6 .previewIcons {
+  color: #7632f5;
+  border: solid 2px #5ce887;
 }
