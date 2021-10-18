@@ -16,8 +16,8 @@ function App() {
 	const [rotate1, setRotate1] = useState('down');
 	const [rotate2, setRotate2] = useState('up');
 	const [rotate3, setRotate3] = useState('up');
-	const [palette, setPalette] = useState(ls.get('palette', 'palette1'));
-	const [image, setImage] = useState(ls.get('image', picRandom));
+	// const [palette, setPalette] = useState(ls.get('palette', 'palette1'));
+	// const [image, setImage] = useState(ls.get('image', picRandom));
 	const [success, setSuccess] = useState('');
 	const [error, setError] = useState('');
 	const [data, setData] = useState(
@@ -29,7 +29,7 @@ function App() {
 			email: '',
 			linkedin: '',
 			github: '',
-			photo: '',
+			photo: picRandom,
 		})
 	);
 
@@ -37,13 +37,13 @@ function App() {
 		ls.set('data', data);
 	}, [data]);
 
-	useEffect(() => {
-		ls.set('palette', palette);
-	}, [palette]);
+	// useEffect(() => {
+	// 	ls.set('palette', palette);
+	// }, [palette]);
 
-	useEffect(() => {
-		ls.set('image', image);
-	}, [image]);
+	// useEffect(() => {
+	// 	ls.set('image', image);
+	// }, [image]);
 
 	const handleReset = () => {
 		setData({
@@ -54,18 +54,18 @@ function App() {
 			email: '',
 			linkedin: '',
 			github: '',
-			photo: '',
+			photo: picRandom,
 		});
-		setImage(picRandom);
-		setPalette('palette1');
+		// setImage(picRandom);
+		// setPalette('palette1');
 	};
 	const handleImage = (imageData) => {
-		setImage(imageData);
+		// setImage(imageData);
 		setData({ ...data, photo: imageData });
 	};
 
 	const handlePalette = (event) => {
-		setPalette(event.target.id);
+		// setPalette(event.target.id);
 		setData({ ...data, palette: event.target.id });
 	};
 
@@ -155,9 +155,9 @@ function App() {
 
 					<main className="page">
 						<Preview
-							palettePreview={palette}
+							// palettePreview={palette}
 							dataPreview={data}
-							dataImage={image}
+							// dataImage={image}
 							handleReset={handleReset}
 						/>
 						{/* - - - - - - - - - - - - - - - - - - - - - - */}
@@ -182,7 +182,8 @@ function App() {
 							dataPhone={data.phone}
 							dataLink={data.linkedin}
 							dataGit={data.github}
-							dataImage={image}
+							dataImage={data.photo}
+							dataPalette={data.palette}
 							data={data}
 							success={success}
 							setSuccess={setSuccess}

@@ -15,7 +15,7 @@ const Preview = (props) => {
 				</button>
 				{/* Tarjeta previsualización */}
 				<article
-					className={`sample__card js_card_result ${props.palettePreview}`}
+					className={`sample__card js_card_result ${props.dataPreview.palette}`}
 				>
 					<hgroup className="sample___card--title ">
 						<h2 className="sample__card--title--name previewName">
@@ -33,7 +33,7 @@ const Preview = (props) => {
 
 					<div
 						className="sample__card--img js__profile-image"
-						style={{ backgroundImage: `url(${props.dataImage})` }}
+						style={{ backgroundImage: `url(${props.dataPreview.photo})` }}
 					></div>
 
 					{/* Listado iconos redes */}

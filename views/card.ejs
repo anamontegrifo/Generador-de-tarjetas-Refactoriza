@@ -16,7 +16,7 @@
 	<section class="sample">
 		<!-- {/* Tarjeta previsualización */} -->
 
-		<article class="sample__card <%= palette %> ">
+		<article class="sample__card <%= palette %>">
 			<hgroup class=" sample___card--title">
 				<h2 class="sample__card--title--name previewName">
 					<%= name %>
@@ -27,7 +27,7 @@
 			</hgroup>
 			<!-- {/* Previsualización imagen */} -->
 
-			<div class="sample__card--img js__profile-image" style="background-image: url(<%= photo %>)"></div>
+			<div class="sample__card--img js__profile-image" style="background-image: url('<%= photo %>')"></div>
 
 			<!-- {/* Listado iconos redes */} -->
 			<ul class="sample__card--contact">
@@ -47,14 +47,14 @@
 
 				<!-- {/* Icono linkedin */} -->
 				<li class="item item1">
-					<a href="<%= linkedin %>" target="_blank" title="Linkedin" class="itemLink previewIcons " rel="noreferrer">
+					<a href='<%= linkedin %>' target="_blank" title="Linkedin" class="itemLink previewIcons " rel="noreferrer">
 						<i class="fab fa-linkedin-in"></i>
 					</a>
 				</li>
 
 				<!-- {/* Icono github */} -->
 				<li class="item item1">
-					<a href="<%= github %>" target="_blank" title="Github" class="itemLink previewIcons " rel="noreferrer">
+					<a href='<%= github %>' target="_blank" title="Github" class="itemLink previewIcons " rel="noreferrer">
 						<i class="fab fa-github-alt"></i>
 					</a>
 				</li>

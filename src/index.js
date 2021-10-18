@@ -65,8 +65,23 @@ server.post('/card', (req, res) => {
 		response.error = 'missing photo';
 		response.success = false;
 	} else {
-		response.cardURL = 'Este enlace funciona, comprobado por Mesalina y Ana';
+		const query = db.prepare(
+			'INSERT INTO card (palette, name, job, phone, photo, email, github, linkedin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+		);
+
+		const result = query.run(
+			req.body.palette,
+			req.body.name,
+			req.body.job,
+			req.body.phone,
+			req.body.photo,
+			req.body.email,
+			req.body.github,
+			req.body.linkedin
+		);
+
 		response.success = true;
+		response.cardURL = `http://localhost:4000/card/${result.lastInsertRowid}`;
 	}
 
 	res.json(response);
