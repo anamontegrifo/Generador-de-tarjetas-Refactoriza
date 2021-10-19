@@ -15,7 +15,7 @@ server.set('view engine', 'ejs');
 server.use(express.json({ limit: '10mb' }));
 
 // Arrancamos el servidor en el puerto 3000
-const serverPort = 4000;
+const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
 	console.log(`Server listening at http://localhost:${serverPort}`);
 });
@@ -81,7 +81,7 @@ server.post('/card', (req, res) => {
 		);
 
 		response.success = true;
-		response.cardURL = `http://localhost:4000/card/${result.lastInsertRowid}`;
+		response.cardURL = `https://awesome-profile-nodemonies.herokuapp.com/card/${result.lastInsertRowid}`;
 	}
 
 	res.json(response);

@@ -1,6 +1,6 @@
 const Share = (props) => {
 	const handleClick = () => {
-		fetch('//localhost:4000/card', {
+		fetch('/card', {
 			method: 'POST',
 			body: JSON.stringify(props.data),
 			headers: {
