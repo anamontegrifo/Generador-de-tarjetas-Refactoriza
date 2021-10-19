@@ -69,7 +69,7 @@ const Share = (props) => {
 							>
 								{props.success}
 							</a>
-							<button className="button js-buttonTwitterOne">
+							<div className="button js-buttonTwitterOne">
 								<a
 									href={`https://twitter.com/intent/tweet?url=${props.success} `}
 									target="_blank"
@@ -83,7 +83,7 @@ const Share = (props) => {
 										</p>
 									</i>
 								</a>
-							</button>
+							</div>
 						</article>
 					) : (
 						''
