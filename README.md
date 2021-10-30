@@ -4,8 +4,6 @@ Este proyecto grupal consiste en refactorizar un código heredado, generar los c
 
 Esta es la apariencia de la web:
 
-Home:
-
 ![screenshot](./web/src/images/screenshot.png)
 
 ### Tecnologías y recursos utilizados para el proyecto:
