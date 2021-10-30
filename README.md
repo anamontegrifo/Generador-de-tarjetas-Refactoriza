@@ -6,7 +6,7 @@ Esta es la apariencia de la web:
 
 Home:
 
-![screenshot-01](./src/images/screenshot.png)
+![screenshot](./web/src/images/screenshot.png)
 
 ### Tecnologías y recursos utilizados para el proyecto:
 
