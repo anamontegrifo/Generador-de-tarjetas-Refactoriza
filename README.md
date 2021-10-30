@@ -1,6 +1,6 @@
 # Refactorización de código heredado y desarrollo de servidor web.
 
-Este proyecto grupal consiste en refactorizar un código heredado, generar los componentes necesarios usando React, implementar la comunicación con el backendScrum como marco de referencia de trabajo.
+Este proyecto grupal consiste en refactorizar un código heredado, generar los componentes necesarios usando React, implementar la comunicación con el backend y usar Scrum como marco de referencia de trabajo.
 
 Esta es la apariencia de la web:
 
