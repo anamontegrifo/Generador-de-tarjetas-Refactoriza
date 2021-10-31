@@ -6,6 +6,10 @@ Esta es la apariencia de la web:
 
 ![screenshot](./web/src/images/screenshot.png)
 
+Aspecto de la tarjeta generada:
+
+![screenshot](./web/src/images/card.png)
+
 ### Tecnologías y recursos utilizados para el proyecto:
 
 - HTML y preprocesador SASS con sintaxis SCSS
